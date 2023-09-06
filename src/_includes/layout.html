@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- META -->
+    <title>{{ title | default: 'The Crepuscular' }}</title>
+    <meta name="description" content="A Stygian-Shade fansite.">
+    <link rel="icon" href="/favicon.ico">
+
+    <!-- SCRIPTS -->
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script src="/js/all.js"></script>
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/crepuscular.css">
+
+    <!-- FONTAWESOME -->
+    <link href="/css/all.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid p-0" id="mainContainer">
+        <div class="row no-gutters justify-content-center">
+            <div class="col-lg-9 d-flex flex-column">
+
+                <!-- TOP NAV START -->
+                <nav class="navbar navbar-expand-lg d-flex justify-content-between align-items-center px-lg-4 sticky-top"
+                    id="topNav">
+                    <i class="fa-duotone fa-clouds-moon" style="font-size: 1.35rem;"></i>
+                    <a class="navbar-brand m-0" href="/">
+                        The Crepuscular
+                    </a>
+
+                    <button class="navbar-toggler p-0" type="button" data-toggle="collapse"
+                        data-target="#topNavCollapse" aria-controls="topNavCollapse" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon d-flex justify-content-center align-items-center"
+                            style="color: #fff;"><i class="fa-regular fa-list"></i></span>
+                    </button>
+                </nav>
+                <!-- TOP NAV END -->
+
+                <div id="mainBox">
+                    <div class="row no-gutters">
+
+                        <!-- SIDE NAV START -->
+                        <div class="col-lg-3 navColumn">
+                            <div id="sideNav" class="p-4">
+                                {% include 'sidebar.html' %}
+                            </div>
+                        </div>
+                        <!-- SIDE NAV END -->
+
+                        <!-- RIGHT COLUMN START -->
+                        <div class="col-lg-9 d-flex flex-column">
+
+                            <div class="alert alert-warning text-center m-2"><i
+                                    class="fa-solid fa-triangle-exclamation"></i> This website is still under
+                                construction, sorry! Please check back later for further updates.</div>
+
+                            <!-- HEADER IMAGE -->
+                            <div class="header-image">
+                                <img src="/img/header.png"
+                                    alt="The Crepuscular's header image, a crescent moon obscured by purple clouds">
+                            </div>
+
+                            <!-- PAGE CONTENT START -->
+                            <div id="mainContent" class="p-4 h-100">
+                                {% block content %}{{ content }}{% endblock %}
+                            </div>
+                            <!-- PAGE CONTENT END -->
+
+                        </div>
+                        <!-- RIGHT COLUMN END -->
+
+                        <!-- FOOTER START -->
+                        <div class="site-footer">
+                            {% include 'footer.html' %}
+                        </div>
+                        <!-- FOOTER END -->
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
