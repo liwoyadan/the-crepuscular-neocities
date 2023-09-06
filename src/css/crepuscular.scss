@@ -2,7 +2,66 @@
 
 $bg-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%2396aace' fill-opacity='0.11'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E");
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant&family=Cormorant+SC&family=Oxygen&family=Quicksand&display=swap');
+/** FONTS **/
+@font-face {
+  font-family: 'Cormorant Infant';
+  src:url('../webfonts/CormorantInfant-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Cormorant Infant';
+  src:url('../webfonts/CormorantInfant-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Cormorant Infant';
+  src:url('../webfonts/CormorantInfant-Italic.ttf') format('truetype');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Cormorant Infant';
+  src:url('../webfonts/CormorantInfant-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Cormorant SC';
+  src:url('../webfonts/CormorantSC-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Cormorant SC';
+  src:url('../webfonts/CormorantSC-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  src:url('../webfonts/Quicksand-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  src:url('../webfonts/Quicksand-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Oxygen';
+  src:url('../webfonts/Oxygen-Regular.woff2') format('woff2'),
+      url('../webfonts/Oxygen-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Oxygen';
+  src:url('../webfonts/Oxygen-Bold.woff2') format('woff2'),
+      url('../webfonts/Oxygen-Bold.woff') format('woff');
+  font-weight: bold;
+}
+
 $infant: 'Cormorant Infant', serif;
 $sc: 'Cormorant SC', serif;
 $quicksand: 'Quicksand', sans-serif;
@@ -56,9 +115,9 @@ $oxygen: 'Oxygen', sans-serif;
 	
 @media all and (max-width:992px) { 
 
- .offcanvas-header{ display:block; }
- 
- .mobile-offcanvas{
+.offcanvas-header{ display:block; }
+
+.mobile-offcanvas{
     visibility: hidden;
     transform:translateX(-100%);
     border-radius:0; 
@@ -89,6 +148,11 @@ $bright-violet: rgb(161, 96, 189);
 
 /** BASE STYLES **/
 
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $violet rgba($dark, 1);
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 3px;
@@ -98,7 +162,7 @@ $bright-violet: rgb(161, 96, 189);
 ::-webkit-scrollbar-track {
   background-color: rgba($dark, 1); 
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: $violet;
