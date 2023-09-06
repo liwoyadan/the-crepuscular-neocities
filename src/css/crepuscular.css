@@ -1,0 +1,232 @@
+/** THE CREPUSCULAR **/
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Infant&family=Cormorant+SC&family=Oxygen&family=Quicksand&display=swap");
+/** MEDIA QUERY MIXINS **/
+/** OFF CANVAS **/
+.offcanvas-header {
+  display: none;
+}
+
+.screen-overlay {
+  height: 100%;
+  z-index: 30;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  background-color: rgba(34, 34, 34, 0.6);
+  transition: opacity 0.2s linear, visibility 0.1s, width 1s ease-in;
+}
+
+.screen-overlay.show {
+  transition: opacity 0.5s ease, width 0s;
+  opacity: 1;
+  width: 100%;
+  visibility: visible;
+}
+
+@media all and (max-width: 992px) {
+  .offcanvas-header {
+    display: block;
+  }
+
+  .mobile-offcanvas {
+    visibility: hidden;
+    transform: translateX(-100%);
+    border-radius: 0;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1200;
+    width: 80%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transition: visibility 0.2s ease-in-out, transform 0.2s ease-in-out;
+  }
+
+  .mobile-offcanvas.show {
+    visibility: visible;
+    transform: translateX(0);
+  }
+}
+/** COLOUR VARIABLES **/
+/** BASE STYLES **/
+/* width */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #15131c;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #6e5774;
+  border-radius: 2px;
+}
+
+h1, h2, h3, h4 {
+  text-shadow: white 0px 0px 10px, white 0px 0px 55px, #a160bd 0px 0px 20px, #a160bd 0px 0px 40px;
+}
+
+h1 {
+  font-family: "Cormorant Infant", serif;
+}
+
+h2 {
+  font-family: "Cormorant SC", serif;
+}
+
+h3, h4 {
+  font-family: "Quicksand", sans-serif;
+}
+
+i {
+  letter-spacing: 1px;
+}
+
+p {
+  font-size: 110%;
+}
+
+a {
+  color: #a160bd;
+  transition: 0.15s all;
+}
+a:hover {
+  color: rgba(161, 96, 189, 0.75);
+}
+
+.card {
+  background-color: transparent;
+  background-image: linear-gradient(180deg, rgba(21, 19, 28, 0.85) 20%, #15131c 100%);
+  box-shadow: rgba(21, 19, 28, 0.45) 0px 13px 27px -5px, rgba(21, 19, 28, 0.3) 0px 8px 16px -8px;
+  border: none;
+  border-radius: 5px;
+}
+.card h1.heading, .card h2.heading {
+  position: absolute;
+  top: -1.5rem;
+  z-index: 1;
+}
+.card p {
+  max-width: 85ch;
+}
+.card .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/** MAIN LAYOUT **/
+body {
+  background-color: transparent;
+  background-image: linear-gradient(180deg, #242039 0%, #2a2b47 50%, #6e5774 100%);
+  color: rgba(255, 255, 255, 0.85);
+  font-family: "Oxygen", sans-serif;
+  height: 100%;
+}
+
+#mainContainer {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%2396aace' fill-opacity='0.11'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E");
+  min-height: 100%;
+}
+
+#mainBox {
+  display: flex;
+  flex-direction: column;
+}
+
+#mainContent {
+  background-image: linear-gradient(180deg, rgba(21, 19, 28, 0.75) 0%, rgba(21, 19, 28, 0.45) 100%);
+}
+
+#topNav {
+  background-color: #15131c;
+  border-bottom: 1px solid rgba(161, 96, 189, 0.55);
+}
+#topNav .navbar-brand {
+  color: #fff;
+  font-family: "Cormorant Infant", serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: rgba(255, 255, 255, 0.55) 0px 0px 5px, white 0px 0px 10px, white 0px 0px 15px, #a160bd 0px 0px 20px, #a160bd 0px 0px 40px;
+}
+
+.navColumn {
+  background-image: linear-gradient(180deg, rgba(21, 19, 28, 0.55) 0%, rgba(21, 19, 28, 0.25) 100%);
+}
+
+#sideNav {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 50px;
+}
+
+.card-border {
+  background-clip: padding-box;
+  border: solid 1px transparent;
+}
+.card-border:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -1px;
+  border-radius: inherit;
+  background: linear-gradient(to bottom, rgba(161, 96, 189, 0.05) 10%, #a160bd);
+}
+
+.header-image {
+  max-height: 300px;
+}
+.header-image img {
+  width: 100%;
+}
+
+.site-footer {
+  background-color: #15131c;
+  color: rgba(255, 255, 255, 0.35);
+  font-family: "Quicksand", sans-serif;
+  font-size: 75%;
+  padding: 0.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+/** FRONT PAGE **/
+.newsBox {
+  font-size: 90%;
+  height: 200px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  overflow: auto;
+}
+.newsBox ul {
+  list-style-type: square;
+}
+.newsBox ul li {
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.definition {
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 2rem;
+}
+.definition h3 {
+  text-shadow: rgba(255, 255, 255, 0.5) 0px 0px 10px, rgba(255, 255, 255, 0.5) 0px 0px 55px, #a160bd 0px 0px 20px, #a160bd 0px 0px 40px;
+}
+
+/*# sourceMappingURL=crepuscular.css.map */
