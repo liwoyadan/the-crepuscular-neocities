@@ -114,10 +114,9 @@ $oxygen: 'Oxygen', sans-serif;
 }
 	
 @media all and (max-width:992px) { 
+  .offcanvas-header{ display:block; }
 
-.offcanvas-header{ display:block; }
-
-.mobile-offcanvas{
+  .mobile-offcanvas{
     visibility: hidden;
     transform:translateX(-100%);
     border-radius:0; 
@@ -195,6 +194,7 @@ p {
 
 a {
   color: $bright-violet;
+  text-shadow: 1px 1px 0px $dark;
   transition: 0.15s all;
   
   &:hover {
@@ -233,12 +233,16 @@ body {
   background-image: linear-gradient(180deg, rgba($purple, 1) 0%, rgba($purple-2, 1) 50%, rgba($violet, 1) 100%);
   color: rgba(white, 0.85);
   font-family: $oxygen;
-  height: 100%;
+  min-height: 100vh;
 }
 
 #mainContainer {
   background-image: $bg-pattern;
-  min-height: 100%;
+  min-height: 100vh;
+}
+
+#mainRow {
+  min-height: 100vh;
 }
 
 #mainBox {
@@ -248,8 +252,8 @@ body {
 
 #mainContent {
   background-image: linear-gradient(180deg, rgba($dark, 0.75) 0%, rgba($dark, 0.45) 100%);
+  min-height: 50vh;
 }
-
 
 #topNav {
   background-color: #15131c;
@@ -338,3 +342,5 @@ body {
     text-shadow: rgba(white, 0.5) 0px 0px 10px, rgba(white, 0.5) 0px 0px 55px, rgba($bright-violet, 1) 0px 0px 20px, rgba($bright-violet, 1) 0px 0px 40px;
   }
 }
+
+/** ARCHIVE **/
