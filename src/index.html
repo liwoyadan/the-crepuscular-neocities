@@ -16,7 +16,7 @@ layout: layout.html
             happen to come across any bugs (including anything breaking on mobile) or
             inconsistencies, let me know in the guestbook and I'll check it out!</p>
 
-        <div class="text-muted align-self-end mx-2" style="font-size: 80%;">- wyrmbloods
+        <div class="text-muted align-self-end mx-2" style="font-size: 75%;">- wyrmbloods (min)
         </div>
     </div>
 </div>
@@ -39,12 +39,7 @@ layout: layout.html
             <h2 class="heading">What's New</h2>
 
             <div class="newsBox">
-                <ul>
-                    <li><b>[22.07.13]</b> The base of the site's layout has more or less
-                        been finished, so the home page is now live! There's still
-                        plenty of tweaks to be made, but the bulk of the start of this
-                        site is now all good to go.</li>
-                </ul>
+                {% include 'news.html' %}
             </div>
 
         </div>
@@ -57,18 +52,7 @@ layout: layout.html
             <h2 class="heading">On The Way</h2>
 
             <div class="newsBox">
-                <ul>
-                    <li>Code a base for and then migrate my current four existing
-                        Dreamlands guides from the old carrd</li>
-                    <li>Set up the event archives index page</li>
-                    <li>Archive zone 1 of Return to Treatropolis event</li>
-                    <li>Archive zone 2 of Return to Treatropolis event</li>
-                    <li>Archive zone 3 of Return to Treatropolis event</li>
-                    <li>Create some public f2u profile codes for Stygians</li>
-                    <li>Set up Treat base gallery</li>
-                    <li>Set up credits page</li>
-                    <li>Stygian live code previewer...?</li>
-                </ul>
+                {% include 'todo.html' %}
             </div>
 
         </div>
